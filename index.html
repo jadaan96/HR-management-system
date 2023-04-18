@@ -22,10 +22,64 @@
         </nav>
     </header>
     <main>
-        <div id="divv">
             <h2> The Employee Information</h2>
+        <div class="adjesting">
+        <section>
+            <fieldset>
+                <legend> Enter the employee information</legend>
+                <form id="employeeForm">
+                <div>
+                    <label for="">Full name</label>
+                    <input type="text" id="fullName">
+                </div>
+                <div>
+                    <label for="">Department </label>
+                    <select name="Department" id="Department">
+                        <option selected disabled>choose the Department</option>
+                        <option value="Administration">Administration</option>
+                        <option value="Marketing">Marketing</option>
+                        <option value="Development">Development</option>
+                        <option value="Finance">Finance</option>
+                    </select>
+                    </div>
+                    <div id = levelInput>
+                        <label for="">Level </label>
+                        <select name="Level" id="Level">
+                            <option selected disabled>choose the Level</option>
+                            <option value="Junior">Junior</option>
+                            <option value="Mid-Senior">Mid-Senior</option>
+                            <option value="Senior">Senior</option>
+                        </select>
+                        </div>
+                        <div id="imgURL">
+                            <label for="img">Image url </label>
+                            <input type="url" id="img">
+                        </div>
+                        <div>
+                            <button type="submit">submit</button>
+                        </div>
+                    </form>
+            </fieldset>
 
-        </div>
+        </section>
+        <section id="show">
+            <section id="Administration" >
+                <legend class="leg">Administration</legend>
+            </section>
+            <section id= "Finance">
+                <legend class="leg">Finance</legend>
+
+            </section>
+            <section id ="Marketing">
+                <legend class="leg">Marketing</legend>
+
+            </section>
+            <section id="Development">
+                <legend class="leg">Development</legend>
+
+            </section>
+        </section>
+    </div>
     </main>
     <footer>
         <p> copy right is resarved &copy; 2023 </p>
@@ -37,5 +91,4 @@
     </footer>
     <script src="./app.js"></script>
 </body>
-
 </html>

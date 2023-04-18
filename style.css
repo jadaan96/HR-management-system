@@ -19,7 +19,7 @@ header h1{
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 p{
-    padding: 10px;
+    padding: 7px;
     line-height: 1.6;
 }
 div h2{
@@ -37,4 +37,96 @@ a{
     text-decoration: none;
     font-size: larger;
     padding: 10px;
+}
+fieldset{
+    border: 2px dashed blue;    
+    padding: 7px;
+    min-width: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 250px;
+    background-color: whitesmoke;
+ 
+}
+.employeeForm{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+.imagclass {
+    height: 150px;
+    width: 300x;
+    border-radius:10%;
+    padding: 5px;
+    align-content: center;
+    margin-top: 10px;
+}
+.divclass {
+    border-radius: 5%;
+    display: flex;
+    flex-direction: column;
+    min-width: 200px;
+    min-height: 30px;
+    background-color: rgb(50 63 118);
+    margin: 5px;
+    align-items: center;
+}
+#show{
+    display: flex;
+    justify-content: start;
+    flex-wrap: nowrap ;
+    min-height: 100vh;
+}
+.paragraph{
+    color: rgb(243, 238, 238);
+    font-size: 10px;
+    font-weight: bolder;
+    font-family: 'sans-serif';
+}
+.adjesting{
+    display: flex;
+    flex-direction: row;
+
+}
+#Administration{
+    background-color: rgb(10, 88, 62);
+    padding: 5px;
+    margin: 5px;
+    
+    border-radius: 15px;
+}
+#Finance{
+    background-color: rgb(6, 65, 65);
+    padding: 5px;
+    margin: 5px;
+    border-radius: 15px;
+}
+#Development{
+    background-color: rgb(34, 98, 170);
+    padding: 5px;
+    margin: 5px;
+    border-radius: 15px;
+}
+#Marketing{
+    background-color: rgb(21, 107, 110);
+    padding: 5px;
+    margin: 5px;
+    border-radius: 15px;
+}
+form div {
+    display: flex;
+    flex-direction: column;
+    height: 46px;
+    justify-content: space-evenly;
+    width: 282px;
+    
+}
+.leg{
+    font-size: 25px;
+    background-color: aliceblue;
+    border-radius: 5px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: #660303;;
 }
