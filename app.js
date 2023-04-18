@@ -2,12 +2,12 @@
 
 
 
-function Employee(employeeID, fullName, department, level, image) {
-    this.employeeID = employeeID;
+function Employee(fullName, department, level, image, employeeID = 0) {
     this.fullName = fullName;
     this.department = department;
     this.level = level;
     this.image = image;
+    this.employeeID = employeeID;
     this.salary = this.salaryEmployee();
 
 }
@@ -47,33 +47,128 @@ Employee.prototype.salaryEmployee = function () {
 };
 
 
-let array = []
-function addEmployee(id, employeeName, section, lvl, img) {
-    let x = new Employee(id, employeeName, section, lvl, img);
-    array.push(x)
-    return array;
+
+
+
+
+
+
+Employee.prototype.cards = function () {
+    const admin = document.getElementById('Administration')
+    const dev = document.getElementById('Development')
+    const fin = document.getElementById('Marketing')
+    const mark = document.getElementById('Finance')
+
+    const divE = document.createElement('div')
+    divE.className = "divclass"
+    if (this.department === "Administration") {
+        admin.appendChild(divE);
+    } else if (this.department === "Finance") {
+        fin.appendChild(divE)
+    } else if (this.department === "Marketing") {
+        mark.appendChild(divE)
+    } else if (this.department === "Development") {
+        dev.appendChild(divE)
+    }
+
+    
+    const imgelemant = document.createElement('img')
+    imgelemant.src = this.image
+    divE.appendChild(imgelemant)
+    imgelemant.className = "imagclass"
+    const pelemant = document.createElement('p')
+    pelemant.textContent = `Name: ${this.fullName} - ID ${this.employeeID}`
+    divE.appendChild(pelemant)
+    pelemant.className = "paragraph"
+    const p2elemant = document.createElement('p')
+    p2elemant.textContent = `Department ${this.department} - Level ${this.level} `
+    p2elemant.className = "paragraph"
+    divE.appendChild(p2elemant)
+    const salaryelemant = document.createElement('p')
+    salaryelemant.textContent = ` ${this.salary}`
+    salaryelemant.className = "paragraph"
+    divE.appendChild(salaryelemant)
+        ;
+
+
 }
-let ghaziSamer = addEmployee(1000, "Ghazi Samer", "Administration", "Senior", "")
-let lanaAli =  addEmployee(1001, 'Lana Ali', 'Finance', 'Senior', "")
-let tamaraAyoub = addEmployee(1002, 'Tamara Ayoub', 'Marketing', 'Senior', "")
-let safiWalid = addEmployee(1003, 'Safi Walid', 'Administration', 'Mid-Senior', "")
-let omarZaid = addEmployee(1004, 'Omar Zaid', 'Development', 'Senior', "")
-let ranaSaleh = addEmployee(1005, 'Rana Saleh', 'Development', 'Junior', "")
-let hadiAhmad = addEmployee(1006, 'Hadi Ahmad', 'Finance', 'Mid-Senior', "")
 
 
+let ghaziSamer = new Employee("Ghazi Samer", "Administration", "Senior", "https://github.com/LTUC/amman-prep-d13/blob/main/Class-08/lab/assets/Ghazi.jpg?raw=true", 1000)
+let lanaAli = new Employee('Lana Ali', 'Finance', 'Senior', "https://github.com/LTUC/amman-prep-d13/blob/main/Class-08/lab/assets/Lana.jpg?raw=true", 1001)
+let tamaraAyoub = new Employee('Tamara Ayoub', 'Marketing', 'Senior', "https://github.com/LTUC/amman-prep-d13/blob/main/Class-08/lab/assets/Tamara.jpg?raw=true", 1002)
+let safiWalid = new Employee('Safi Walid', 'Administration', 'Mid-Senior', "https://github.com/LTUC/amman-prep-d13/blob/main/Class-08/lab/assets/Safi.jpg?raw=true", 1003)
+let omarZaid = new Employee('Omar Zaid', 'Development', 'Senior', "https://github.com/LTUC/amman-prep-d13/blob/main/Class-08/lab/assets/Omar.jpg?raw=true", 1004)
+let ranaSaleh = new Employee('Rana Saleh', 'Development', 'Junior', "https://github.com/LTUC/amman-prep-d13/blob/main/Class-08/lab/assets/Rana.jpg?raw=true", 1005)
+let hadiAhmad = new Employee('Hadi Ahmad', 'Finance', 'Mid-Senior', "https://github.com/LTUC/amman-prep-d13/blob/main/Class-08/lab/assets/Hadi.jpg?raw=true", 1006)
 
-
-
+let array = [ghaziSamer, lanaAli, tamaraAyoub, safiWalid, omarZaid, ranaSaleh, hadiAhmad]
 for (let i = 0; i < array.length; i++) {
-    const showThePargaraph = document.createElement('p')
-    showThePargaraph.textContent = ` The employee ID is ${array[i].employeeID}  the employee Full name is
-    ${array[i].fullName}   employee Department is ${array[i].department} employee Level is ${array[i].level} 
-    the employee salary will be after taxes   ${array[i].salaryEmployee()}  `
+    array[i].cards()
+}
 
-    const parantelemant = document.getElementById("divv")
-    parantelemant.appendChild(showThePargaraph)
+
+
+
+
+
+
+
+
+
+
+Employee.prototype.randomeID = function (heightEmpID, lowID) {
+    this.employeeID = Math.floor(Math.random() * (heightEmpID - lowID + 1)) + lowID
+    return this.employeeID
+}
+
+
+function funcEmployee(element) {
+    element.preventDefault();
+
+    let fullName = element.target.fullName.value;
+    let department = element.target.Department.value;
+    let level = element.target.Level.value;
+    let image = element.target.img.value;
+
+    const newEmployee = new Employee(fullName, department, level, image);
+    newEmployee.randomeID(1000, 9999)
+    newEmployee.cards()
+    console.log(newEmployee)
+
 
 }
 
 
+
+
+const formApply = document.getElementById('employeeForm')
+formApply.addEventListener('submit', funcEmployee)
+// Employee.prototype.old = function () {
+//     const parantelemant = document.getElementById("show")
+//     const divEle = document.createElement('div');
+//     parantelemant.appendChild(divEle)
+//     divEle.className = "divclass"
+//     const imga = document.createElement('img')
+//     imga.src = this.image
+//     imga.className = "imagclass"
+//     divEle.appendChild(imga)
+//     const firstp = document.createElement('p')
+//     firstp.textContent = `Name: ${this.fullName} -ID ${this.employeeID} ${this.department}`
+//     divEle.appendChild(firstp);
+//     firstp.className = "paragraph"
+//     // const secp = document.createElement('p')
+//     // secp.textContent = `Department ${this.department} - Level ${this.level} `
+//     // secp.className = "paragraph"
+    // divEle.appendChild(secp)
+    // const salaryele = document.createElement('p')
+    // salaryele.textContent = ` ${this.salary}`
+    // salaryele.className = "paragraph"
+    // divEle.appendChild(salaryele)
+// }
+// const show = document.getElementById('show')
+    // const carrdsForEmployee = document.createElement('div')
+    // show.appendChild(carrdsForEmployee)
+    // const divEle = document.createElement('div');
+    // carrdsForEmployee.appendChild(divEle)
+        // creatimg.setAttribute("src",this.image)
