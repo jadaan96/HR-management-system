@@ -187,14 +187,14 @@ formApply.addEventListener('submit', funcEmployee)
 function gitElemantFromLocalStorage() {
     let gittingElemant = localStorage.getItem('employeeKey')
     let newShap = JSON.parse(gittingElemant)
-    if (newShap !== null) {
+    if (newShap !== null) {     
         Employee.allemployee = [];
         for (let i = 0; i < newShap.length; i++) {
 
             new Employee(newShap[i].fullName, newShap[i].department, newShap[i].level, newShap[i].image, newShap[i].employeeID, newShap[i].salary)
 
+            console.log(Employee.allemployee)
         }
-        console.log(Employee.allemployee)
         // Employee.allemployee[0].cards()
     }
 }

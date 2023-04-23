@@ -42,11 +42,11 @@ let totalSalaryOfEmployee = adminTotalsalary+finTotalsalary+marketTotalsalary+de
 const adminTr = document.getElementById('AdministrationTd')
 let thAdmin = document.createElement('th')
 let totalSalryAdmin = document.createElement('th')
+let averageSlaryAdmin = document.createElement('th')
 adminTr.appendChild(thAdmin)
 adminTr.appendChild(totalSalryAdmin)
 thAdmin.textContent = numberOfAdmin
 totalSalryAdmin.textContent = adminTotalsalary
-let averageSlaryAdmin = document.createElement('th')
 adminTr.appendChild(averageSlaryAdmin)
 averageSlaryAdmin.textContent = adminTotalsalary/numberOfAdmin
 
