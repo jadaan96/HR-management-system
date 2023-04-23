@@ -1,7 +1,7 @@
 body {
     display: flex   ;
     flex-direction: column;
-    min-height: 100vh;
+    min-height: 110vh;
     justify-content: space-between;
 }
 header{
@@ -32,6 +32,7 @@ footer{
     display: flex;
     justify-content: space-between;
     align-items: center;
+    width: 100%;
 }
 a{
     text-decoration: none;
@@ -128,5 +129,36 @@ form div {
     background-color: aliceblue;
     border-radius: 5px;
     font-family: Georgia, 'Times New Roman', Times, serif;
-    color: #660303;;
+    color: #660303;;}
+
+
+/*Accountion page*/
+/* .second body { 
+    display:flex;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    align-self: center; */
+
+/* } */
+
+.tabel1 th,  tr {
+    border: 2px solid;
+    height: 50px;
+    padding: 10px
+}  
+
+.tabel1 {
+ width: 900px;
+ text-align: center;
+ border: 5px double rgb(14, 14, 116);
+ height: 350px;
+ margin: 10px;
+
+}
+.edit{
+    padding: 23px;
+    align-items: center;
+    display: flex;
+    justify-content: center;
 }
