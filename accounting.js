@@ -35,6 +35,8 @@ let numberOfAdmin = adminArray.length
 let numberOfFin = finArray.length
 let numberOfMarket = marketArray.length
 let numberOfDev = devArray.length
+
+
 let totalNumberOfEmployee = numberOfAdmin+numberOfFin+numberOfMarket+numberOfDev
 let totalSalaryOfEmployee = adminTotalsalary+finTotalsalary+marketTotalsalary+devTotalsalary
 const adminTr = document.getElementById('AdministrationTd')
@@ -44,6 +46,11 @@ adminTr.appendChild(thAdmin)
 adminTr.appendChild(totalSalryAdmin)
 thAdmin.textContent = numberOfAdmin
 totalSalryAdmin.textContent = adminTotalsalary
+let averageSlaryAdmin = document.createElement('th')
+adminTr.appendChild(averageSlaryAdmin)
+averageSlaryAdmin.textContent = adminTotalsalary/numberOfAdmin
+
+
 
 const financTr = document.getElementById('FinanceTd')
 let thFinanc = document.createElement('th')
@@ -51,7 +58,10 @@ let FinancTotalSalary = document.createElement('th')
 financTr.appendChild(thFinanc)
 financTr.appendChild(FinancTotalSalary)
 FinancTotalSalary.textContent = finTotalsalary
-thFinanc.textContent = finArray.length
+thFinanc.textContent = numberOfFin
+let averageSlaryFin = document.createElement('th')
+financTr.appendChild(averageSlaryFin)
+averageSlaryFin.textContent = finTotalsalary/numberOfFin
 
 const marketTr = document.getElementById('marketTd')
 let numberOfMarketempl = document.createElement('th')
@@ -60,6 +70,9 @@ marketTr.appendChild(numberOfMarketempl)
 marketTr.appendChild(marketTotalSalary)
 marketTotalSalary.textContent = marketTotalsalary
 numberOfMarketempl.textContent = numberOfMarket
+let averageSlaryMarket = document.createElement('th')
+marketTr.appendChild(averageSlaryMarket)
+averageSlaryMarket.textContent = marketTotalsalary/numberOfMarket
 
 const devTr = document.getElementById('devTr')
 let numberOfDevempl = document.createElement('th')
@@ -68,6 +81,9 @@ devTr.appendChild(numberOfDevempl)
 devTr.appendChild(DevTotalSalarya)
 DevTotalSalarya.textContent = devTotalsalary
 numberOfDevempl.textContent = numberOfDev
+let averageSlaryDevlop = document.createElement('th')
+devTr.appendChild(averageSlaryDevlop)
+averageSlaryDevlop.textContent = devTotalsalary/numberOfDev
 
 const tottal = document.getElementById('totalall')
 let total1 = document.createElement('th')
